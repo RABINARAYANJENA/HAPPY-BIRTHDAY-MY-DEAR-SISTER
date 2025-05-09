@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `,
     "photo-scroll": `
       <section id="photo-scroll" class="section-content">
-        <h2>Swipe Left </h2>
+        <h2> "A sister is a gift to the heart, a friend to the spirit, a golden thread to the meaning of life"</h2>
         <div class="photo-scroll-container">
           <img src="p1.jpg" alt="Photo 1" />
           <img src="p2.jpg" alt="Photo 2" />
