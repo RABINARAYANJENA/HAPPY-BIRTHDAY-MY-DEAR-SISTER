@@ -1,0 +1,373 @@
+/* General Reset and Body */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #7b2ff7, #9a4ef1);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+header {
+  background: skyblue;
+  padding: 1rem 2rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.portfolio-name {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  animation: rainbow 8s ease infinite;
+  word-wrap: break-word;
+}
+
+@keyframes rainbow {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ffafbd, 0 0 20px #ffafbd;
+  }
+  to {
+    text-shadow: 0 0 20px #ffc3a0, 0 0 30px #ffc3a0;
+  }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: white;
+  color: #9a79af;
+  box-shadow: 0 0 10px #9a79af;
+}
+
+/* Main content area */
+main {
+  flex-grow: 1;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: lightpink;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  min-height: auto;
+  overflow: visible;
+  position: relative;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+/* Section common styles */
+section {
+  padding: 1.5rem 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Birthday Wish Section */
+#birthday-wish {
+  text-align: center;
+}
+
+#birthday-wish img.cake {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+#birthday-wish img.sister-pic {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* About Sister Section */
+#about-sis {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  padding: 0 1rem;
+}
+
+/* Childhood Memory Section */
+#childhood-memory {
+  font-size: 1.1rem;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-start;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-height: 600px;
+  overflow-y: auto;
+  align-items: center; /* center content horizontally */
+  text-align: center; /* center text */
+}
+
+#childhood-memory img {
+  width: 100%;
+  max-width: 350px; /* slightly smaller max width */
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  align-self: center;
+}
+
+/* Navigation adjustments for mobile */
+@media (max-width: 600px) {
+  nav ul {
+    justify-content: center;
+    padding: 0 1rem;
+  }
+}
+
+/* Dedicated Song Section */
+#dedicated-song {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+#dedicated-song audio {
+  width: 100%;
+  outline: none;
+  margin-top: 1rem;
+}
+
+/* Photo Scroll Section */
+#photo-scroll {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 1rem;
+  height: 300px; /* increased height for larger images */
+}
+
+.photo-scroll-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  gap: 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  height: 100%; /* fill container height */
+  align-items: center; /* vertically center images */
+}
+
+#photo-scroll img {
+  flex-shrink: 0;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  scroll-snap-align: start;
+  margin-right: 16px;
+}
+
+/* Certificate Download Section */
+#certificate-download {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+#certificate-download button {
+  background: #b497bd;
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(180,140,180,0.6);
+  transition: background 0.3s ease;
+  min-width: 150px;
+}
+
+#certificate-download button:hover {
+  background: #9a79af;
+}
+
+#nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 900px) {
+  main {
+    max-width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #nav-toggle {
+    display: block;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    display: none;
+    background-color: gray;
+    position: absolute;
+    top: 3.5rem;
+    right: 1rem;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li a {
+    padding: 0.75rem 1rem;
+    display: block;
+    white-space: normal;
+  }
+
+  #birthday-wish img.cake {
+    max-width: 180px;
+  }
+
+  #photo-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .photo-scroll-container {
+    flex-wrap: nowrap;
+  }
+
+  #photo-scroll img {
+    width: 80vw;
+    max-width: 250px;
+    height: auto;
+    margin-right: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Adjust font sizes and paddings for mobile */
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  .portfolio-name {
+    font-size: 1.8rem;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  #birthday-wish button,
+  #certificate-download button {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 400px) {
+  .portfolio-name {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    width: 150px;
+    top: 3rem;
+    right: 0.5rem;
+  }
+
+  #birthday-wish img.cake {
+    max-width: 140px;
+  }
+
+  #photo-scroll img {
+    max-width: 200px;
+  }
+
+  #certificate-download button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    min-width: 120px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
